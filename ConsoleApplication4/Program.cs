@@ -30,7 +30,7 @@ namespace ConsoleApplication4
                         Thread.Sleep(667);
                         cookieBalance++;
                         cookieAmount++;
-                        Console.WriteLine(Convert.ToString(cookieAmount));
+                        //Console.WriteLine(Convert.ToString(cookieAmount));
                         Console.WriteLine("Cookie #" + cookieBalance);
                     }
                     //if (cookieBalance > 0)

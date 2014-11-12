@@ -21,8 +21,9 @@ namespace ConsoleApplication4
 
             lock (thisLock)
             {
-
+                
                 Thread.Sleep(1000);
+                Console.WriteLine("\t" + "\t" +  "Greg Kjøpte kake");
                 return BuyCookie;
             }
         }

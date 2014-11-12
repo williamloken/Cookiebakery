@@ -14,14 +14,14 @@ namespace ConsoleApplication4
             Thread[] threads = new Thread[10];
             CookieBakery cb = new CookieBakery(0);
             Greg bc = new Greg(0);
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i <3; i++)
             {
                 //This is how we create new "Main" methods for each thread. Here, these "Mains" are instances of the method "acc.DoTransactions".
                 Thread t = new Thread(new ThreadStart(cb.DoTransactions));
                 threads[i] = t;
 
             }
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 1; i++)
             {
                 //This is how we create new "Main" methods for each thread. Here, these "Mains" are instances of the method "acc.DoTransactions".
                 Thread t = new Thread(new ThreadStart(bc.Buy));
