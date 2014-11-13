@@ -11,30 +11,19 @@ namespace ConsoleApplication4
     {
         private Object thisLock = new Object();
         CookieBakery cb = new CookieBakery();
-
-        int Buy(int BuyCookie)
-        {
-
-          lock (thisLock)
-            {
-                for (int i = 1; i < 13; i++ )
-                {
-                                   
-                    Thread.Sleep(1000);
-                    new Basket().Consume(i);
-                }
-                //cb.cookieBalance++;
-                //Console.WriteLine("\t" + "\t" + "Greg Kjøpte kake# " + cb.cookieBalance);
-                return BuyCookie;
-            }          
-        }
+        Basket b = new Basket();
         public void Buy()
         {
-            while (cb.cookieBalance<=13) 
+
+            //lock (thisLock)
             {
+                for (int i = 1; i < 13; i++)
+                {
+                    Thread.Sleep(1000);
+                    
+                    b.Consume(i);
 
-                Buy(1);
-
+                }
             }
         }
     }

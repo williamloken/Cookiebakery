@@ -3,29 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ConsoleApplication4
 {
-    internal class Basket
+    class Basket
     {
-        public int basketStock(int consume, int produce)
+        public void BasketStock()
         {
-                //Console.WriteLine("Cookie#" );
-            //Console.WriteLine(stock + " Cookies in basket");
-            return consume;
+            
+                Console.WriteLine(" Cookies left");
+           
+      
             
         }
-        public int Consume(int basket)
+        public void Consume(int consumed)
         {
-            Console.WriteLine("\t" + "\t" + "Greg got Cookie#" + basket);
-            
-            return basket;
+           // while (/*basketStock*/ > 0)
+            {
+               Console.WriteLine("\t" + "\t" + "Greg got cookie #" + consumed);
+            }            
+                  
         }
-        public int Produce(int basket)
+        public void Produce(int produced)
         {
-            Consume(basket);
-
-            return basket;
+            Console.WriteLine("Cookie# " + produced);
         }
     }
 }
+
