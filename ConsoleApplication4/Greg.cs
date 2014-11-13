@@ -10,32 +10,32 @@ namespace ConsoleApplication4
     class Greg
     {
         private Object thisLock = new Object();
-        int cookieBuy;
-        public Greg (int initial)
-            {
-                cookieBuy = initial;
-            }
+        CookieBakery cb = new CookieBakery();
 
         int Buy(int BuyCookie)
         {
 
-            lock (thisLock)
+          lock (thisLock)
             {
-                
-                Thread.Sleep(1000);
-                Console.WriteLine("\t" + "\t" +  "Greg Kjøpte kake");
+                for (int i = 1; i < 13; i++ )
+                {
+                                   
+                    Thread.Sleep(1000);
+                    new Basket().Consume(i);
+                }
+                //cb.cookieBalance++;
+                //Console.WriteLine("\t" + "\t" + "Greg Kjøpte kake# " + cb.cookieBalance);
                 return BuyCookie;
-            }
+            }          
         }
         public void Buy()
         {
-            for (int i = 0; i < 100; i++)
+            while (cb.cookieBalance<=13) 
             {
 
                 Buy(1);
 
             }
-
         }
     }
 }
